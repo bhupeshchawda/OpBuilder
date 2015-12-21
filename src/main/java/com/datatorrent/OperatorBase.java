@@ -1,11 +1,9 @@
 package com.datatorrent;
 
-import com.datatorrent.api.Context;
-import com.datatorrent.api.DefaultInputPort;
-import com.datatorrent.api.DefaultOutputPort;
-import com.datatorrent.common.util.BaseOperator;
-
 import java.lang.reflect.Method;
+
+import com.datatorrent.api.Context;
+import com.datatorrent.common.util.BaseOperator;
 
 /**
  * Created by bhupesh on 20/12/15.
@@ -13,8 +11,8 @@ import java.lang.reflect.Method;
 public class OperatorBase extends BaseOperator
 {
   protected transient Method method;
-  protected transient String methodName = "string_length";
-  protected Library library = new Library();
+  protected String methodName = "string_length";
+  protected Object library = new Library();
 
   public OperatorBase()
   {
