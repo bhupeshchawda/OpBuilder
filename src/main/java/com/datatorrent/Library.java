@@ -9,7 +9,7 @@ public class Library
   {
   }
 
-  public static int string_length(String s)
+  public int string_length(String s)
   {
     return s.length();
   }

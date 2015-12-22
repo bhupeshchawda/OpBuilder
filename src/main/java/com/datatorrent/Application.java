@@ -24,7 +24,7 @@ public class Application implements StreamingApplication
     RandomNumberGenerator randomGenerator = dag.addOperator("randomGenerator", RandomNumberGenerator.class);
     randomGenerator.setNumTuples(500);
 
-    SISOOpBuilder op = dag.addOperator("Built", SISOOpBuilder.class);
+    SISOOpBuilder op = dag.addOperator("Built", new SISOOpBuilder("string_length", new Library()));
     ConsoleOutputOperator cons = dag.addOperator("console", new ConsoleOutputOperator());
 
     dag.addStream("randomData", randomGenerator.out, op.input).setLocality(Locality.CONTAINER_LOCAL);
